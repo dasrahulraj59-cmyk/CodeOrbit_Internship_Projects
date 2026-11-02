@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of Rahul Raj Das - Full Stack Development Intern at CodeOrbit Tech. Exploring web development, frontend, backend, and software engineering.">
+  <title>Rahul Raj Das | Full Stack Developer Portfolio</title>
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Google Fonts & Font Awesome Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body data-theme="dark">
+
+  <!-- ==================== HEADER & NAVBAR ==================== -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="brand-logo">
+        <span class="logo-code">&lt;</span>Rahul<span class="logo-dot">.</span>Dev<span class="logo-code">/&gt;</span>
+      </a>
+
+      <nav class="nav-menu" id="nav-menu">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
+          <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
+          <li class="nav-item"><a href="#experience" class="nav-link">Experience</a></li>
+          <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Theme Toggle Button -->
+        <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle Dark/Light Mode" title="Toggle Theme">
+          <i class="fa-solid fa-moon theme-icon" id="theme-icon"></i>
+        </button>
+
+        <!-- Mobile Hamburger Toggle -->
+        <button class="mobile-toggle-btn" id="mobile-toggle" aria-label="Open Navigation Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== HERO SECTION ==================== -->
+  <section class="hero-section" id="hero">
+    <div class="hero-container">
+      <div class="hero-content">
+        <div class="badge-wrapper">
+          <span class="internship-badge">
+            <span class="pulse-dot"></span>
+            Full Stack Intern @ CodeOrbit Tech (Batch 3)
+          </span>
+        </div>
+
+        <h1 class="hero-title">
+          Hi, I'm <span class="highlight-text">Rahul Raj Das</span>
+        </h1>
+        <h2 class="hero-subtitle">
+          Building <span class="typing-text" id="typing-text">Modern Web Applications</span><span class="cursor">|</span>
+        </h2>
+        <p class="hero-description">
+          Aspiring Full Stack Web Developer passionate about architecting scalable backend APIs, responsive dynamic frontends, and intuitive user experiences. Currently completing the 1-Month Virtual Internship Program at <strong>CodeOrbit Tech</strong>.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#projects" class="btn btn-primary">
+            <i class="fa-solid fa-layer-group"></i> Explore Projects
+          </a>
+          <a href="#contact" class="btn btn-secondary">
+            <i class="fa-solid fa-paper-plane"></i> Get in Touch
+          </a>
+          <a href="assets/Rahul_Raj_Das_Resume.pdf" class="btn btn-outline" download id="resume-download-btn">
+            <i class="fa-solid fa-file-arrow-down"></i> Resume
+          </a>
+        </div>
+
+        <div class="social-links-hero">
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+          <a href="mailto:rahulrajdas@example.com" aria-label="Email Me">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="avatar-card">
+          <div class="avatar-glow"></div>
+          <div class="avatar-inner">
+            <div class="terminal-header">
+              <span class="terminal-dot red"></span>
+              <span class="terminal-dot yellow"></span>
+              <span class="terminal-dot green"></span>
+              <span class="terminal-title">rahul@codeorbit:~$</span>
+            </div>
+            <div class="code-preview">
+              <p><span class="c-keyword">const</span> <span class="c-var">intern</span> = {</p>
+              <p class="c-indent"><span class="c-prop">name</span>: <span class="c-string">"Rahul Raj Das"</span>,</p>
+              <p class="c-indent"><span class="c-prop">id</span>: <span class="c-string">"COT/BTH3/91388"</span>,</p>
+              <p class="c-indent"><span class="c-prop">role</span>: <span class="c-string">"Full Stack Intern"</span>,</p>
+              <p class="c-indent"><span class="c-prop">company</span>: <span class="c-string">"CodeOrbit Tech"</span>,</p>
+              <p class="c-indent"><span class="c-prop">skills</span>: [<span class="c-string">"HTML"</span>, <span class="c-string">"CSS"</span>, <span class="c-string">"JS"</span>, <span class="c-string">"Node"</span>, <span class="c-string">"Express"</span>],</p>
+              <p class="c-indent"><span class="c-prop">status</span>: <span class="c-string">"Building & Shipping 🚀"</span></p>
+              <p>};</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== ABOUT SECTION ==================== -->
+  <section class="section about-section" id="about">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-tag">Who I Am</span>
+        <h2 class="section-title">About Me</h2>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-bio">
+          <h3 class="about-lead">Passionate Software Engineer & Web Enthusiast</h3>
+          <p>
+            Hello! I'm <strong>Rahul Raj Das</strong>, a computer science student and aspiring Full Stack Developer. I thrive at the intersection of aesthetic design and robust backend engineering.
+          </p>
+          <p>
+            During my internship at <strong>CodeOrbit Tech</strong> (Batch 3, ID: COT/BTH3/91388), I focused on building production-ready projects from scratch: designing responsive web applications, state persistence with browser APIs, and creating clean RESTful services using Node.js and Express.
+          </p>
+          <p>
+            I am always eager to learn modern frameworks, contribute to impactful products, and collaborate with passionate developer communities.
+          </p>
+
+          <div class="about-info-cards">
+            <div class="info-card">
+              <i class="fa-solid fa-graduation-cap"></i>
+              <div>
+                <h4>Education</h4>
+                <p>B.Tech in Computer Science / IT</p>
+              </div>
+            </div>
+            <div class="info-card">
+              <i class="fa-solid fa-location-dot"></i>
+              <div>
+                <h4>Location</h4>
+                <p>India</p>
+              </div>
+            </div>
+            <div class="info-card">
+              <i class="fa-solid fa-laptop-code"></i>
+              <div>
+                <h4>Focus</h4>
+                <p>Full Stack Web Development</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-stats">
+          <div class="stat-box">
+            <span class="stat-number">3+</span>
+            <span class="stat-label">Internship Projects Completed</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-number">100%</span>
+            <span class="stat-label">Responsive & Cross-Browser</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-number">15+</span>
+            <span class="stat-label">Modern Web Technologies</span>
+          </div>
+          <div class="stat-box">
+            <span class="stat-number">1 Mo</span>
+            <span class="stat-label">Intensive Virtual Internship</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SKILLS SECTION ==================== -->
+  <section class="section skills-section" id="skills">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-tag">Tech Stack</span>
+        <h2 class="section-title">My Skills & Expertise</h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle">The tools, languages, and technologies I work with to bring ideas to reality.</p>
+      </div>
+
+      <div class="skills-grid">
+        <!-- Frontend Column -->
+        <div class="skill-category-card">
+          <div class="category-header">
+            <i class="fa-solid fa-desktop category-icon"></i>
+            <h3>Frontend Development</h3>
+          </div>
+          <p class="category-desc">Crafting responsive, accessible, and interactive user interfaces.</p>
+          <ul class="skill-list">
+            <li>
+              <div class="skill-info">
+                <span>HTML5 / Semantic Markup</span>
+                <span>95%</span>
+              </div>
+              <div class="progress-bar"><div class="progress-fill" style="width: 95%;"></div></div>
+            </li>
+            <li>
+              <div class="skill-info">
+                <span>CSS3 / Flexbox & CSS Grid</span>
+                <span>90%</span>
+              </div>
+              <div class="progress-bar"><div class="progress-fill" style="width: 90%;"></div></div>
+            </li>
+            <li>
+              <div class="skill-info">
+                <span>JavaScript (ES6+)</span>
+                <span>85%</span>
+              </div>
+              <div class="progress-bar"><div class="progress-fill" style="width: 85%;"></div></div>
+            </li>
+            <li>
+              <div class="skill-info">
+                <span>DOM Manipulation & Web APIs</span>
+                <span>90%</span>
+              </div>
+              <div class="progress-bar"><div class="progress-fill" style="width: 90%;"></div></div>
+            </li>
+            <li>
+              <div class="skill-info">
+                <span>Responsive & Mobile-First Design</span>
+                <span>92%</span>
+              </div>
+              <div class="progress-bar"><div class="progress-fill" style="width: 92%;"></div></div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Backend Column -->
+        <div class="skill-category-card">
+          <div class="category-header">
+            <i class="fa-solid fa-server category-icon"></i>
+            <h3>Backend Development</h3>
+          </div>
+          <p class="category-desc">Building secure REST APIs, server logic, and structured data handling.</p>
+          <ul class="skill-list">
+            <li>
+              <div class="skill-info">
+                <span>Node.js Runtime</span>
+                <span>85%</span>
+              </div>
+              <div class="progress-bar"><div class="progress-fill" style="width: 85%;"></div></div>
+            </li>
+            <li>
+              <div class="skill-info">
+                <span>Express.js Framework</span>
+                <span>88%</span>
+              </div>
+              <div class="progress-bar"><div class="progress-fill" style="width: 88%;"></div></div>
+            </li>
+            <li>
+              <div class="skill-info">
+                <span>RESTful API Design & CRUD</span>
+                <span>90%</span>
+              </div>
+              <div class="progress-bar"><div class="progress-fill" style="width: 90%;"></div></div>
+            </li>
+            <li>
+              <div class="skill-info">
+                <span>JSON & Data Persistence</span>
+                <span>92%</span>
+              </div>
+              <div class="progress-bar"><div class="progress-fill" style="width: 92%;"></div></div>
+            </li>
+            <li>
+              <div class="skill-info">
+                <span>Middleware & Error Handling</span>
+                <span>85%</span>
+              </div>
+              <div class="progress-bar"><div class="progress-fill" style="width: 85%;"></div></div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Tools & Practices Column -->
+        <div class="skill-category-card">
+          <div class="category-header">
+            <i class="fa-solid fa-screwdriver-wrench category-icon"></i>
+            <h3>Developer Tools & Workflow</h3>
+          </div>
+          <p class="category-desc">Productivity, version control, API testing, and deployment.</p>
+          <ul class="skill-list">
+            <li>
+              <div class="skill-info">
+                <span>Git & GitHub Version Control</span>
+                <span>88%</span>
+              </div>
+              <div class="progress-bar"><div class="progress-fill" style="width: 88%;"></div></div>
+            </li>
+            <li>
+              <div class="skill-info">
+                <span>Postman / API Testing</span>
+                <span>90%</span>
+              </div>
+              <div class="progress-bar"><div class="progress-fill" style="width: 90%;"></div></div>
+            </li>
+            <li>
+              <div class="skill-info">
+                <span>VS Code & Developer Extensions</span>
+                <span>95%</span>
+              </div>
+              <div class="progress-bar"><div class="progress-fill" style="width: 95%;"></div></div>
+            </li>
+            <li>
+              <div class="skill-info">
+                <span>Chrome DevTools Debugging</span>
+                <span>88%</span>
+              </div>
+              <div class="progress-bar"><div class="progress-fill" style="width: 88%;"></div></div>
+            </li>
+            <li>
+              <div class="skill-info">
+                <span>NPM & Package Management</span>
+                <span>85%</span>
+              </div>
+              <div class="progress-bar"><div class="progress-fill" style="width: 85%;"></div></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PROJECTS SECTION ==================== -->
+  <section class="section projects-section" id="projects">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-tag">Featured Work</span>
+        <h2 class="section-title">Internship Projects</h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle">
+          Projects built as part of the CodeOrbit Tech Full Stack Development Internship (Batch 3).
+        </p>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Project 1 -->
+        <article class="project-card">
+          <div class="project-header-graphic bg-gradient-1">
+            <span class="project-task-badge">Task 1</span>
+            <div class="project-icon-large">
+              <i class="fa-solid fa-address-card"></i>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-tags">
+              <span class="tag">HTML5</span>
+              <span class="tag">CSS3</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">Responsive</span>
+            </div>
+            <h3 class="project-title">Personal Portfolio Website</h3>
+            <p class="project-desc">
+              A high-performance, responsive personal portfolio built with semantic HTML5, modern CSS custom properties, and vanilla JavaScript. Features dark/light mode toggle, mobile navigation, smooth scrolling, and dynamic sections.
+            </p>
+            <div class="project-features">
+              <span><i class="fa-solid fa-check"></i> Dark & Light Theme</span>
+              <span><i class="fa-solid fa-check"></i> Mobile Hamburger Menu</span>
+              <span><i class="fa-solid fa-check"></i> Clean Zero-Framework Code</span>
+            </div>
+            <div class="project-footer">
+              <a href="#hero" class="btn btn-sm btn-primary">
+                <i class="fa-solid fa-eye"></i> View Live
+              </a>
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
+                <i class="fa-brands fa-github"></i> Source Code
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project-card">
+          <div class="project-header-graphic bg-gradient-2">
+            <span class="project-task-badge">Task 2</span>
+            <div class="project-icon-large">
+              <i class="fa-solid fa-list-check"></i>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-tags">
+              <span class="tag">JavaScript ES6</span>
+              <span class="tag">LocalStorage API</span>
+              <span class="tag">CSS Grid/Flex</span>
+              <span class="tag">DOM CRUD</span>
+            </div>
+            <h3 class="project-title">To-Do List Web Application</h3>
+            <p class="project-desc">
+              An intuitive task management application featuring full CRUD capabilities (Add, Edit, Complete, Delete). Data is automatically persisted in browser localStorage with status filtering, priorities, categories, and task metrics.
+            </p>
+            <div class="project-features">
+              <span><i class="fa-solid fa-check"></i> LocalStorage Persistence</span>
+              <span><i class="fa-solid fa-check"></i> Status & Category Filters</span>
+              <span><i class="fa-solid fa-check"></i> Priority & Due Dates</span>
+            </div>
+            <div class="project-footer">
+              <a href="../Task2_TodoList_WebApp/index.html" class="btn btn-sm btn-primary" target="_blank">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Open App
+              </a>
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
+                <i class="fa-brands fa-github"></i> Source Code
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="project-card">
+          <div class="project-header-graphic bg-gradient-3">
+            <span class="project-task-badge">Task 3</span>
+            <div class="project-icon-large">
+              <i class="fa-solid fa-network-wired"></i>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-tags">
+              <span class="tag">Node.js</span>
+              <span class="tag">Express.js</span>
+              <span class="tag">REST API</span>
+              <span class="tag">Postman</span>
+            </div>
+            <h3 class="project-title">Simple REST API (Notes & Contacts)</h3>
+            <p class="project-desc">
+              A robust backend RESTful service developed with Node.js and Express. Implements standard HTTP methods (GET, POST, PUT, DELETE) with structured error handling, JSON persistence, Postman collection, and live interactive docs.
+            </p>
+            <div class="project-features">
+              <span><i class="fa-solid fa-check"></i> Full CRUD Endpoints</span>
+              <span><i class="fa-solid fa-check"></i> JSON File Storage</span>
+              <span><i class="fa-solid fa-check"></i> Postman Collection & Tests</span>
+            </div>
+            <div class="project-footer">
+              <a href="../Task3_Simple_REST_API/public/index.html" class="btn btn-sm btn-primary" target="_blank">
+                <i class="fa-solid fa-bolt"></i> Interactive API Docs
+              </a>
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline">
+                <i class="fa-brands fa-github"></i> Source Code
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== EXPERIENCE SECTION ==================== -->
+  <section class="section experience-section" id="experience">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-tag">Internship & Career</span>
+        <h2 class="section-title">Work Experience</h2>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-meta">
+              <span class="timeline-period">Nov 2026 - Present (1 Month)</span>
+              <span class="timeline-id">Intern ID: COT/BTH3/91388</span>
+            </div>
+            <h3 class="timeline-role">Full Stack Development Intern</h3>
+            <h4 class="timeline-company">CodeOrbit Tech — Batch 3</h4>
+            <p class="timeline-desc">
+              Selected for the hands-on virtual internship program. Assigned 3 core full stack development projects:
+            </p>
+            <ul class="timeline-achievements">
+              <li>Engineered a fully responsive Personal Portfolio Website without frameworks using modern CSS3 and JavaScript.</li>
+              <li>Built an interactive, persistent To-Do List Web App utilizing HTML5, modern styling, and browser LocalStorage API.</li>
+              <li>Designed and implemented a modular RESTful API utilizing Node.js, Express, and JSON file-based data persistence with comprehensive Postman test suite.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CONTACT SECTION ==================== -->
+  <section class="section contact-section" id="contact">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-tag">Let's Connect</span>
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle">Have a question or want to collaborate? Send me a message below!</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info-panel">
+          <div class="info-item">
+            <div class="info-icon"><i class="fa-solid fa-user-tie"></i></div>
+            <div>
+              <h4>Name</h4>
+              <p>Rahul Raj Das</p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon"><i class="fa-solid fa-envelope"></i></div>
+            <div>
+              <h4>Email</h4>
+              <p><a href="mailto:rahulrajdas@example.com">rahulrajdas@example.com</a></p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon"><i class="fa-brands fa-linkedin"></i></div>
+            <div>
+              <h4>LinkedIn</h4>
+              <p><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">linkedin.com/in/rahulrajdas</a></p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon"><i class="fa-brands fa-github"></i></div>
+            <div>
+              <h4>GitHub</h4>
+              <p><a href="https://github.com" target="_blank" rel="noopener noreferrer">github.com/rahulrajdas</a></p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon"><i class="fa-solid fa-id-badge"></i></div>
+            <div>
+              <h4>CodeOrbit Tech ID</h4>
+              <p>COT/BTH3/91388 (Batch 3)</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-panel">
+          <form class="contact-form" id="contact-form" novalidate>
+            <div class="form-group">
+              <label for="name">Your Name <span class="required">*</span></label>
+              <input type="text" id="name" name="name" placeholder="John Doe" required>
+              <small class="error-msg" id="name-error"></small>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email Address <span class="required">*</span></label>
+              <input type="email" id="email" name="email" placeholder="john@example.com" required>
+              <small class="error-msg" id="email-error"></small>
+            </div>
+
+            <div class="form-group">
+              <label for="subject">Subject <span class="required">*</span></label>
+              <input type="text" id="subject" name="subject" placeholder="Project collaboration / Internship inquiry" required>
+              <small class="error-msg" id="subject-error"></small>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message <span class="required">*</span></label>
+              <textarea id="message" name="message" rows="5" placeholder="Hi Rahul, I saw your CodeOrbit Tech projects..." required></textarea>
+              <small class="error-msg" id="message-error"></small>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block" id="submit-btn">
+              <i class="fa-solid fa-paper-plane"></i> Send Message
+            </button>
+            <div class="form-feedback" id="form-feedback"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="logo-code">&lt;</span>Rahul<span class="logo-dot">.</span>Dev<span class="logo-code">/&gt;</span>
+          <p>Full Stack Web Developer Intern | CodeOrbit Tech Batch 3</p>
+        </div>
+        <div class="footer-socials">
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="mailto:rahulrajdas@example.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Rahul Raj Das. Completed for CodeOrbit Tech Internship Program.</p>
+        <p><a href="#hero" class="back-to-top"><i class="fa-solid fa-angle-up"></i> Back to Top</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
