@@ -1,0 +1,184 @@
+{
+  "info": {
+    "_postman_id": "c0de0rb1-t3ch-4f88-9138-8rahulrajdas",
+    "name": "CodeOrbit Tech - Task 3 Notes REST API",
+    "description": "Postman Collection for testing Task 3 REST API developed by Rahul Raj Das (COT/BTH3/91388) for CodeOrbit Tech Internship.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "1. Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/health",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "health"]
+        },
+        "description": "Check if API server is running and view uptime/system diagnostics."
+      }
+    },
+    {
+      "name": "2. Get All Notes",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/notes",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "notes"]
+        },
+        "description": "Fetch all notes stored in JSON persistence."
+      }
+    },
+    {
+      "name": "3. Filter Notes by Category",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/notes?category=CodeOrbit",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "notes"],
+          "query": [
+            {
+              "key": "category",
+              "value": "CodeOrbit"
+            }
+          ]
+        },
+        "description": "Filter notes by category name."
+      }
+    },
+    {
+      "name": "4. Search Notes by Keyword",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/notes?search=portfolio",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "notes"],
+          "query": [
+            {
+              "key": "search",
+              "value": "portfolio"
+            }
+          ]
+        },
+        "description": "Search notes across title and content."
+      }
+    },
+    {
+      "name": "5. Get Note by ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/notes/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "notes", "1"]
+        },
+        "description": "Retrieve specific note by its numeric ID."
+      }
+    },
+    {
+      "name": "6. Create New Note",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Submission Checklist\",\n  \"content\": \"Push source code to dedicated GitHub repo, record 2-5 min screen video, post on LinkedIn tagging @CodeOrbitTech and submit Google Form.\",\n  \"category\": \"CodeOrbit\",\n  \"priority\": \"High\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/notes",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "notes"]
+        },
+        "description": "Create a new note with title, content, category, and priority."
+      }
+    },
+    {
+      "name": "7. Update Note by ID",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Welcome to CodeOrbit Tech Internship (Updated)\",\n  \"content\": \"All 3 tasks (Portfolio, To-Do App, REST API) completed with documentation!\",\n  \"priority\": \"High\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/notes/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "notes", "1"]
+        },
+        "description": "Update note fields by ID."
+      }
+    },
+    {
+      "name": "8. Delete Note by ID",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/notes/4",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "notes", "4"]
+        },
+        "description": "Delete a note record by ID."
+      }
+    },
+    {
+      "name": "9. Validation Test (Missing Title)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"content\": \"Note without title to test validation error response.\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/notes",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "notes"]
+        },
+        "description": "Should return HTTP 400 Bad Request with validation error message."
+      }
+    }
+  ]
+}

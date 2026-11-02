@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "title": "Welcome to CodeOrbit Tech Internship",
+    "content": "Full Stack Development 1-Month Internship program Batch 3. Assigned tasks: Portfolio, To-Do App, and REST API.",
+    "category": "CodeOrbit",
+    "priority": "High",
+    "createdAt": "2026-11-01T10:00:00.000Z",
+    "updatedAt": "2026-11-01T10:00:00.000Z"
+  },
+  {
+    "id": 2,
+    "title": "Complete Task 1: Personal Portfolio",
+    "content": "Built responsive portfolio using HTML5, CSS3 variables, and vanilla JavaScript with dark/light mode.",
+    "category": "Internship",
+    "priority": "High",
+    "createdAt": "2026-11-01T11:30:00.000Z",
+    "updatedAt": "2026-11-01T11:30:00.000Z"
+  },
+  {
+    "id": 3,
+    "title": "Complete Task 2: To-Do Web App",
+    "content": "Developed interactive task manager with localStorage persistence, search, categories, and statistics.",
+    "category": "Internship",
+    "priority": "Medium",
+    "createdAt": "2026-11-01T14:15:00.000Z",
+    "updatedAt": "2026-11-01T14:15:00.000Z"
+  },
+  {
+    "id": 4,
+    "title": "Task 3: Test REST API with Postman",
+    "content": "Verify all endpoints (GET, POST, PUT, DELETE) with Postman collection and automated test script.",
+    "category": "Development",
+    "priority": "High",
+    "createdAt": "2026-11-01T16:00:00.000Z",
+    "updatedAt": "2026-11-01T16:00:00.000Z"
+  }
+]

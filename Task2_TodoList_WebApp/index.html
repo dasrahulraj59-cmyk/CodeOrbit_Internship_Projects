@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Task 2: Responsive To-Do List Web App with LocalStorage persistence. Built by Rahul Raj Das for CodeOrbit Tech Internship.">
+  <title>TaskOrbit | Smart To-Do List Web App</title>
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body data-theme="dark">
+
+  <div class="app-layout">
+    <!-- Header -->
+    <header class="app-header">
+      <div class="header-left">
+        <div class="logo">
+          <i class="fa-solid fa-list-check logo-icon"></i>
+          <span class="logo-text">TaskOrbit<span class="dot">.</span></span>
+        </div>
+        <span class="internship-tag">CodeOrbit Tech — Task 2</span>
+      </div>
+
+      <div class="header-right">
+        <button class="icon-btn" id="theme-toggle" title="Toggle Light / Dark Mode" aria-label="Toggle Theme">
+          <i class="fa-solid fa-moon" id="theme-icon"></i>
+        </button>
+        <button class="btn btn-outline-sm" id="export-btn" title="Export tasks to JSON">
+          <i class="fa-solid fa-file-export"></i> Export
+        </button>
+        <label class="btn btn-outline-sm file-input-label" title="Import tasks from JSON">
+          <i class="fa-solid fa-file-import"></i> Import
+          <input type="file" id="import-input" accept=".json" style="display: none;">
+        </label>
+      </div>
+    </header>
+
+    <main class="app-main">
+      <!-- Top Overview Metrics -->
+      <section class="stats-card">
+        <div class="stats-details">
+          <div class="stat-item">
+            <span class="stat-number" id="stat-total">0</span>
+            <span class="stat-name">Total Tasks</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-number" id="stat-active">0</span>
+            <span class="stat-name">In Progress</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-number text-success" id="stat-completed">0</span>
+            <span class="stat-name">Completed</span>
+          </div>
+        </div>
+        <div class="progress-container">
+          <div class="progress-label">
+            <span>Overall Progress</span>
+            <span id="stat-percent">0%</span>
+          </div>
+          <div class="progress-track">
+            <div class="progress-bar" id="progress-bar" style="width: 0%;"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Add Task Form -->
+      <section class="task-form-card">
+        <form id="task-form">
+          <div class="form-row-primary">
+            <input type="text" id="task-title" placeholder="What needs to be done?..." required autocomplete="off">
+            <button type="submit" class="btn btn-primary" id="add-task-btn">
+              <i class="fa-solid fa-plus"></i> Add Task
+            </button>
+          </div>
+
+          <!-- Secondary Options Collapsible / Grid -->
+          <div class="form-row-secondary">
+            <div class="input-field">
+              <label for="task-category"><i class="fa-solid fa-tag"></i> Category</label>
+              <select id="task-category">
+                <option value="Work">💼 Work</option>
+                <option value="Personal">🏠 Personal</option>
+                <option value="Study">📚 Study</option>
+                <option value="Health">💪 Health</option>
+                <option value="CodeOrbit">🚀 CodeOrbit</option>
+              </select>
+            </div>
+
+            <div class="input-field">
+              <label for="task-priority"><i class="fa-solid fa-flag"></i> Priority</label>
+              <select id="task-priority">
+                <option value="Medium">Medium</option>
+                <option value="High">🔴 High</option>
+                <option value="Low">🟢 Low</option>
+              </select>
+            </div>
+
+            <div class="input-field">
+              <label for="task-due-date"><i class="fa-regular fa-calendar"></i> Due Date</label>
+              <input type="date" id="task-due-date">
+            </div>
+
+            <div class="input-field input-desc">
+              <label for="task-desc"><i class="fa-regular fa-comment-dots"></i> Notes / Description</label>
+              <input type="text" id="task-desc" placeholder="Optional notes or details...">
+            </div>
+          </div>
+        </form>
+      </section>
+
+      <!-- Filters & Controls Bar -->
+      <section class="controls-bar">
+        <div class="filter-tabs" id="filter-tabs">
+          <button class="tab-btn active" data-filter="all">All</button>
+          <button class="tab-btn" data-filter="active">Active</button>
+          <button class="tab-btn" data-filter="completed">Completed</button>
+        </div>
+
+        <div class="controls-right">
+          <!-- Search input -->
+          <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="search-input" placeholder="Search tasks...">
+          </div>
+
+          <!-- Sort dropdown -->
+          <select id="sort-select" title="Sort Tasks">
+            <option value="newest">Sort: Newest</option>
+            <option value="oldest">Sort: Oldest</option>
+            <option value="priority">Sort: Priority</option>
+            <option value="dueDate">Sort: Due Date</option>
+          </select>
+
+          <!-- Clear completed -->
+          <button class="btn btn-danger-sm" id="clear-completed-btn" title="Clear completed tasks">
+            <i class="fa-solid fa-trash-can"></i> Clear Completed
+          </button>
+        </div>
+      </section>
+
+      <!-- Task List Container -->
+      <section class="task-list-section">
+        <ul class="task-list" id="task-list">
+          <!-- Dynamic Task Items Injected Here -->
+        </ul>
+
+        <!-- Empty State Message -->
+        <div class="empty-state" id="empty-state" style="display: none;">
+          <div class="empty-icon"><i class="fa-regular fa-clipboard"></i></div>
+          <h3>No tasks found</h3>
+          <p>Add a new task above or adjust your search / filter criteria!</p>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="app-footer">
+      <p>Developed by <strong>Rahul Raj Das</strong> (ID: COT/BTH3/91388) for <strong>CodeOrbit Tech</strong> Internship.</p>
+      <p>All data is automatically saved in your browser's <code>localStorage</code>.</p>
+    </footer>
+  </div>
+
+  <!-- ==================== EDIT TASK MODAL ==================== -->
+  <div class="modal-overlay" id="edit-modal">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h3><i class="fa-solid fa-pen-to-square"></i> Edit Task</h3>
+        <button class="modal-close-btn" id="modal-close">&times;</button>
+      </div>
+      <form id="edit-form">
+        <input type="hidden" id="edit-task-id">
+
+        <div class="modal-field">
+          <label for="edit-title">Task Title</label>
+          <input type="text" id="edit-title" required>
+        </div>
+
+        <div class="modal-field">
+          <label for="edit-desc">Description / Notes</label>
+          <textarea id="edit-desc" rows="3"></textarea>
+        </div>
+
+        <div class="modal-row">
+          <div class="modal-field">
+            <label for="edit-category">Category</label>
+            <select id="edit-category">
+              <option value="Work">💼 Work</option>
+              <option value="Personal">🏠 Personal</option>
+              <option value="Study">📚 Study</option>
+              <option value="Health">💪 Health</option>
+              <option value="CodeOrbit">🚀 CodeOrbit</option>
+            </select>
+          </div>
+
+          <div class="modal-field">
+            <label for="edit-priority">Priority</label>
+            <select id="edit-priority">
+              <option value="High">🔴 High</option>
+              <option value="Medium">Medium</option>
+              <option value="Low">🟢 Low</option>
+            </select>
+          </div>
+
+          <div class="modal-field">
+            <label for="edit-due-date">Due Date</label>
+            <input type="date" id="edit-due-date">
+          </div>
+        </div>
+
+        <div class="modal-actions">
+          <button type="button" class="btn btn-secondary" id="modal-cancel-btn">Cancel</button>
+          <button type="submit" class="btn btn-primary">Save Changes</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Notification Toast Container -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

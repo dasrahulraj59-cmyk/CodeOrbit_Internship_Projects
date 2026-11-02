@@ -1,0 +1,25 @@
+{
+  "name": "codeorbit-task3-rest-api",
+  "version": "1.0.0",
+  "description": "Task 3: Simple REST API built with Node.js and Express for CodeOrbit Tech Full Stack Internship",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "test": "node test-api.js"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "rest-api",
+    "crud",
+    "codeorbit-tech",
+    "internship"
+  ],
+  "author": "Rahul Raj Das (COT/BTH3/91388)",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2"
+  }
+}
